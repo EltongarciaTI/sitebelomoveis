@@ -3,7 +3,6 @@ supabase/admin.py
 supabase/requirements.txt
 .env
 *.env
-admin/admin.js
 
 # ── Sistema ───────────────────────────────────────────────────
 .DS_Store
