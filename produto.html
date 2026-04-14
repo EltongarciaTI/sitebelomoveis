@@ -73,56 +73,65 @@
           <a href="catalogo.html">Catálogo</a>
         </nav>
 
-        <!-- Galeria de imagens -->
-        <div class="product-gallery" id="product-gallery">
-          <div class="gallery-main">
-            <div class="img-placeholder">
-              <i class="fa-solid fa-image" style="font-size:4rem;opacity:.2"></i>
-              <span>Carregando...</span>
+        <!-- Layout: galeria + info lado a lado em tablet/desktop -->
+        <div class="product-detail-layout">
+
+          <!-- Coluna esquerda: galeria -->
+          <div class="product-gallery" id="product-gallery">
+            <div class="gallery-main">
+              <div class="img-placeholder">
+                <i class="fa-solid fa-image" style="font-size:4rem;opacity:.2"></i>
+                <span>Carregando...</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Badge -->
-        <span id="product-badge" style="display:none" class="badge"></span>
+          <!-- Coluna direita: informações -->
+          <div class="product-info-col">
 
-        <!-- Category & Name -->
-        <div class="product-detail-cat">
-          <a id="product-category" href="catalogo.html">Categoria</a>
-        </div>
-        <h1 class="product-detail-name" id="product-name">Carregando produto...</h1>
+            <!-- Badge -->
+            <span id="product-badge" style="display:none" class="badge"></span>
 
-        <!-- Description -->
-        <p class="product-detail-desc" id="product-desc"></p>
+            <!-- Category & Name -->
+            <div class="product-detail-cat">
+              <a id="product-category" href="catalogo.html">Categoria</a>
+            </div>
+            <h1 class="product-detail-name" id="product-name">Carregando produto...</h1>
 
-        <!-- Specs -->
-        <div class="product-specs">
-          <div class="specs-title"><i class="fa-solid fa-list-check"></i> Especificações</div>
-          <div id="product-specs"></div>
-        </div>
+            <!-- Description -->
+            <p class="product-detail-desc" id="product-desc"></p>
 
-        <!-- CTAs -->
-        <div class="detail-cta">
-          <a href="#" class="btn btn-wa btn-lg btn-full product-wa-btn" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp
-          </a>
-          <a href="catalogo.html" class="btn btn-outline-dark btn-full">
-            <i class="fa-solid fa-arrow-left"></i> Voltar ao catálogo
-          </a>
-        </div>
+            <!-- Specs -->
+            <div class="product-specs">
+              <div class="specs-title"><i class="fa-solid fa-list-check"></i> Especificações</div>
+              <div id="product-specs"></div>
+            </div>
 
-        <!-- Info chips -->
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem">
-          <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
-            <i class="fa-solid fa-truck-fast"></i> Entrega disponível
-          </div>
-          <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
-            <i class="fa-solid fa-shield-halved"></i> Produto com garantia
-          </div>
-          <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
-            <i class="fa-solid fa-medal"></i> Qualidade comprovada
-          </div>
-        </div>
+            <!-- CTAs -->
+            <div class="detail-cta">
+              <a href="#" class="btn btn-wa btn-lg btn-full product-wa-btn" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp
+              </a>
+              <a href="catalogo.html" class="btn btn-outline-dark btn-full">
+                <i class="fa-solid fa-arrow-left"></i> Voltar ao catálogo
+              </a>
+            </div>
+
+            <!-- Info chips -->
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem">
+              <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
+                <i class="fa-solid fa-truck-fast"></i> Entrega disponível
+              </div>
+              <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
+                <i class="fa-solid fa-shield-halved"></i> Produto com garantia
+              </div>
+              <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
+                <i class="fa-solid fa-medal"></i> Qualidade comprovada
+              </div>
+            </div>
+
+          </div><!-- /product-info-col -->
+        </div><!-- /product-detail-layout -->
 
         <!-- Related products -->
         <div class="related-section">

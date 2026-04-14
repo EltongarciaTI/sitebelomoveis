@@ -86,13 +86,18 @@
   <!-- ── Main ── -->
   <div id="main">
     <header id="topbar">
-      <h1 id="topbar-title">Dashboard</h1>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <button id="btn-sidebar-toggle" class="btn-sidebar-toggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <h1 id="topbar-title">Dashboard</h1>
+      </div>
       <div style="display:flex;align-items:center;gap:.5rem">
         <button class="btn btn-ghost btn-sm" id="btn-refresh">
-          <i class="fa-solid fa-rotate"></i> Atualizar
+          <i class="fa-solid fa-rotate"></i> <span class="topbar-label">Atualizar</span>
         </button>
         <a href="../index.html" target="_blank" class="btn btn-ghost btn-sm">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver site
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> <span class="topbar-label">Ver site</span>
         </a>
       </div>
     </header>
@@ -446,6 +451,9 @@
   </div>
 </div>
 
+
+<!-- ── Sidebar overlay (mobile) ── -->
+<div id="sidebar-overlay"></div>
 
 <!-- ── Toast container ── -->
 <div id="toast-container"></div>

@@ -689,4 +689,36 @@ document.addEventListener('DOMContentLoaded', () => {
     toast('Atualizando dados...', 'info');
     await loadAll();
   });
+
+  // ── Sidebar toggle (mobile) ──
+  const btnSidebarToggle = document.getElementById('btn-sidebar-toggle');
+  const sidebar          = document.getElementById('sidebar');
+  const sidebarOverlay   = document.getElementById('sidebar-overlay');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+    btnSidebarToggle.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    btnSidebarToggle.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  btnSidebarToggle.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+  });
+
+  sidebarOverlay.addEventListener('click', closeSidebar);
+
+  // Close sidebar when a nav item is clicked on mobile
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 640) closeSidebar();
+    });
+  });
 });
