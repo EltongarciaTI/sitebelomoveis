@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Bello Móveis Algodões</title>
+  <meta name="description" content="Entre em contato com a Bello Móveis Algodões pelo WhatsApp, telefone ou visite nossa loja. Estamos prontos para atender você!">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><i class="fa-solid fa-couch"></i></div>
+        <div class="nav-logo-text"><strong>Bello Móveis</strong><span>Algodões</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="#" class="btn-nav-wa" id="nav-wa-btn" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button class="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="nav-drawer">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+    <a href="catalogo.html"><i class="fa-solid fa-grid-2"></i> Catálogo completo</a>
+    <a href="ofertas.html"><i class="fa-solid fa-tag"></i> Ofertas</a>
+    <div class="drawer-section-label">Categorias</div>
+    <div id="drawer-cats"><!-- JS renderiza --></div>
+    <a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre</a>
+    <a href="contato.html" class="active"><i class="fa-solid fa-envelope"></i> Contato</a>
+    <a href="#" class="nav-drawer-wa" id="drawer-wa-btn" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp</a>
+  </nav>
+
+  <div class="search-overlay">
+    <div class="search-box">
+      <button class="search-close"><i class="fa-solid fa-xmark"></i></button>
+      <form><input type="search" id="search-input" placeholder="Buscar produtos..." autocomplete="off"><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></form>
+      <div id="search-results-preview"></div>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Início</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Contato</span>
+      </nav>
+      <div class="page-banner-icon"><i class="fa-solid fa-envelope"></i></div>
+      <h1>Fale conosco</h1>
+      <p>Estamos prontos para te atender da melhor forma</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTACT -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: WhatsApp + info -->
+        <div>
+          <!-- WhatsApp destaque -->
+          <div class="contact-wa-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            <h3>Fale conosco pelo WhatsApp!</h3>
+            <p>A forma mais rápida e fácil de tirar dúvidas, pedir orçamento ou fechar seu pedido. Respondemos rápido!</p>
+            <a href="#" class="btn-wa-lg" id="wa-main-btn" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Iniciar conversa agora
+            </a>
+          </div>
+
+          <!-- Redes sociais -->
+          <div style="text-align:center;margin-bottom:1.5rem">
+            <p style="font-size:.88rem;color:var(--c-text-muted);margin-bottom:.75rem">Siga-nos nas redes sociais</p>
+            <div class="social-links">
+              <a href="#" id="social-ig" target="_blank" rel="noopener" class="social-btn ig" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" id="social-fb" target="_blank" rel="noopener" class="social-btn fb" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="social-btn wa2" id="social-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Info cards -->
+          <div class="contact-info-grid">
+            <div class="contact-info-card">
+              <div class="contact-info-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <h4>WhatsApp</h4>
+                <p id="info-phone">Carregando...</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon tel"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4>Telefone</h4>
+                <p id="info-phone2">Carregando...</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon loc"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h4>Endereço</h4>
+                <p id="info-address">Carregando...</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon time"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <h4>Horário de atendimento</h4>
+                <p id="info-hours">Carregando...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div>
+          <div class="contact-form">
+            <h3><i class="fa-solid fa-paper-plane" style="color:var(--c-accent);margin-right:.4rem"></i> Envie uma mensagem</h3>
+            <form id="contact-form" onsubmit="submitForm(event)">
+              <div class="form-group">
+                <label for="cf-name">Seu nome *</label>
+                <input type="text" id="cf-name" placeholder="Como posso te chamar?" required>
+              </div>
+              <div class="form-group">
+                <label for="cf-phone">WhatsApp / Telefone *</label>
+                <input type="tel" id="cf-phone" placeholder="(11) 99999-9999" required>
+              </div>
+              <div class="form-group">
+                <label for="cf-interest">Interesse em qual produto?</label>
+                <select id="cf-interest">
+                  <option value="">Selecione uma categoria...</option>
+                  <option>Camas</option>
+                  <option>Colchões</option>
+                  <option>Guarda-Roupas</option>
+                  <option>Box</option>
+                  <option>Sofás</option>
+                  <option>Mesas</option>
+                  <option>Cadeiras</option>
+                  <option>Estantes e Racks</option>
+                  <option>Painéis</option>
+                  <option>Armários</option>
+                  <option>Televisores</option>
+                  <option>Fogões e Fornos</option>
+                  <option>Lavanderia</option>
+                  <option>Ventiladores</option>
+                  <option>Bicicletas</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cf-message">Mensagem</label>
+                <textarea id="cf-message" placeholder="Descreva o que você procura ou tire sua dúvida..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-wa btn-full" style="font-size:1rem;padding:.9rem">
+                <i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp
+              </button>
+              <p class="form-note">
+                <i class="fa-solid fa-lock" style="color:var(--c-accent)"></i>
+                Ao clicar, você será redirecionado ao WhatsApp com sua mensagem preenchida.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP PLACEHOLDER -->
+  <section style="padding:0 0 3rem">
+    <div class="container">
+      <div style="background:var(--c-surface);border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--c-border);box-shadow:var(--sh-sm)">
+        <div id="map-container" style="height:280px;background:var(--c-surface-warm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;color:var(--c-text-muted)">
+          <!-- Cole aqui o iframe do Google Maps em STORE.mapsEmbed no products.js -->
+          <i class="fa-solid fa-location-dot" style="font-size:2.5rem;opacity:.3"></i>
+          <p style="font-size:.88rem;text-align:center">
+            <strong id="map-store-name" style="display:block;color:var(--c-text);font-size:1rem;margin-bottom:.2rem">Bello Móveis Algodões</strong>
+            <span id="map-address">Endereço carregando...</span>
+          </p>
+          <a href="#" id="map-link" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm">
+            <i class="fa-solid fa-map-location-dot"></i> Ver no Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:.75rem">
+            <div class="nav-logo-icon"><i class="fa-solid fa-couch"></i></div>
+            <div class="nav-logo-text"><strong>Bello Móveis</strong><span>Algodões</span></div>
+          </a>
+          <p>Transformando casas em lares com qualidade e o melhor atendimento.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Início</a></li>
+            <li><a href="catalogo.html"><i class="fa-solid fa-chevron-right"></i> Catálogo</a></li>
+            <li><a href="ofertas.html"><i class="fa-solid fa-chevron-right"></i> Ofertas</a></li>
+            <li><a href="sobre.html"><i class="fa-solid fa-chevron-right"></i> Sobre</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Categorias</h4>
+          <ul id="footer-cats"><!-- JS renderiza --></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span id="footer-phone"></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span id="footer-hours"></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span id="footer-address"></span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> Bello Móveis Algodões. Todos os direitos reservados.</p>
+        <div class="footer-socials">
+          <a href="#" id="footer-ig" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" id="footer-fb" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" id="footer-wa2" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+      <div style="text-align:center;padding:.6rem 0 0;border-top:1px solid rgba(255,255,255,.07);margin-top:.75rem">
+        <a href="admin/index.html"
+           style="font-size:.7rem;color:rgba(255,255,255,.2);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:color .25s"
+           onmouseover="this.style.color='rgba(255,255,255,.55)'"
+           onmouseout="this.style.color='rgba(255,255,255,.2)'">
+          <i class="fa-solid fa-lock" style="font-size:.6rem"></i> Área Administrativa
+        </a>
+      </div>
+  </footer>
+
+  <div class="wa-float">
+    <span class="wa-float-tooltip">Falar no WhatsApp</span>
+    <a href="#" class="wa-float-btn" id="wa-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/products.js"></script>
+  <script src="js/sb-client.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const waLink = getWhatsAppLink();
+      ['nav-wa-btn','drawer-wa-btn','wa-main-btn','social-wa','wa-float'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.href = waLink;
+      });
+
+      // Preenche info
+      document.getElementById('info-phone').textContent  = STORE.phone;
+      document.getElementById('info-phone2').textContent = STORE.phone;
+      document.getElementById('info-address').textContent = STORE.address;
+      document.getElementById('info-hours').textContent   = STORE.hours;
+      document.getElementById('map-address').textContent  = STORE.address;
+      document.getElementById('map-link').href = 'https://www.google.com/maps/search/' + encodeURIComponent(STORE.address);
+
+      document.getElementById('footer-phone').textContent   = STORE.phone;
+      document.getElementById('footer-hours').textContent   = STORE.hours;
+      document.getElementById('footer-address').textContent = STORE.address;
+      document.getElementById('footer-year').textContent    = new Date().getFullYear();
+      const _fig = document.getElementById('footer-ig');  if (_fig) { if (STORE.instagram) _fig.href = STORE.instagram; else _fig.style.display='none'; }
+      const _ffb = document.getElementById('footer-fb');  if (_ffb) { if (STORE.facebook)  _ffb.href = STORE.facebook;  else _ffb.style.display='none'; }
+      document.getElementById('footer-wa2').href = waLink;
+      const _sig = document.getElementById('social-ig');  if (_sig) { if (STORE.instagram) _sig.href = STORE.instagram; else _sig.style.display='none'; }
+      const _sfb = document.getElementById('social-fb');  if (_sfb) { if (STORE.facebook)  _sfb.href = STORE.facebook;  else _sfb.style.display='none'; }
+
+      // Se tiver embed do maps, substitui o placeholder
+      if (STORE.mapsEmbed) {
+        document.getElementById('map-container').innerHTML = STORE.mapsEmbed;
+      }
+    });
+
+    function submitForm(e) {
+      e.preventDefault();
+      const name     = document.getElementById('cf-name').value.trim();
+      const phone    = document.getElementById('cf-phone').value.trim();
+      const interest = document.getElementById('cf-interest').value;
+      const message  = document.getElementById('cf-message').value.trim();
+
+      if (!name || !phone) {
+        alert('Por favor, preencha seu nome e telefone.');
+        return;
+      }
+
+      let text = `Olá! Me chamo *${name}* e gostaria de falar com vocês.`;
+      if (interest) text += `\n\n*Interesse:* ${interest}`;
+      if (message)  text += `\n\n*Mensagem:* ${message}`;
+      text += `\n\n*Meu contato:* ${phone}`;
+
+      const url = `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener');
+    }
+  </script>
+</body>
+</html>

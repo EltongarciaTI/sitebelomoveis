@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto — Bello Móveis Algodões</title>
+  <meta name="description" content="Detalhes do produto. Entre em contato pelo WhatsApp para mais informações.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="product">
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><i class="fa-solid fa-couch"></i></div>
+        <div class="nav-logo-text">
+          <strong>Bello Móveis</strong>
+          <span>Algodões</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="#" class="btn-nav-wa" id="nav-wa-btn" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <button class="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="nav-drawer">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+    <a href="catalogo.html"><i class="fa-solid fa-grid-2"></i> Catálogo completo</a>
+    <a href="ofertas.html"><i class="fa-solid fa-tag"></i> Ofertas</a>
+    <div class="drawer-section-label">Categorias</div>
+    <div id="drawer-cats"><!-- JS renderiza --></div>
+    <a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre</a>
+    <a href="contato.html"><i class="fa-solid fa-envelope"></i> Contato</a>
+    <a href="#" class="nav-drawer-wa" id="drawer-wa-btn" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+    </a>
+  </nav>
+
+  <div class="search-overlay">
+    <div class="search-box">
+      <button class="search-close"><i class="fa-solid fa-xmark"></i></button>
+      <form>
+        <input type="search" id="search-input" placeholder="Buscar produtos..." autocomplete="off">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <div id="search-results-preview"></div>
+    </div>
+  </div>
+
+  <!-- PRODUCT CONTENT -->
+  <div id="product-content">
+    <div class="product-detail">
+      <div class="container">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" id="product-breadcrumb" style="margin-bottom:1.25rem;color:var(--c-text-muted);font-size:.8rem">
+          <a href="index.html">Início</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="catalogo.html">Catálogo</a>
+        </nav>
+
+        <!-- Galeria de imagens -->
+        <div class="product-gallery" id="product-gallery">
+          <div class="gallery-main">
+            <div class="img-placeholder">
+              <i class="fa-solid fa-image" style="font-size:4rem;opacity:.2"></i>
+              <span>Carregando...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badge -->
+        <span id="product-badge" style="display:none" class="badge"></span>
+
+        <!-- Category & Name -->
+        <div class="product-detail-cat">
+          <a id="product-category" href="catalogo.html">Categoria</a>
+        </div>
+        <h1 class="product-detail-name" id="product-name">Carregando produto...</h1>
+
+        <!-- Description -->
+        <p class="product-detail-desc" id="product-desc"></p>
+
+        <!-- Specs -->
+        <div class="product-specs">
+          <div class="specs-title"><i class="fa-solid fa-list-check"></i> Especificações</div>
+          <div id="product-specs"></div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="detail-cta">
+          <a href="#" class="btn btn-wa btn-lg btn-full product-wa-btn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp
+          </a>
+          <a href="catalogo.html" class="btn btn-outline-dark btn-full">
+            <i class="fa-solid fa-arrow-left"></i> Voltar ao catálogo
+          </a>
+        </div>
+
+        <!-- Info chips -->
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem">
+          <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
+            <i class="fa-solid fa-truck-fast"></i> Entrega disponível
+          </div>
+          <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
+            <i class="fa-solid fa-shield-halved"></i> Produto com garantia
+          </div>
+          <div class="stat-item" style="background:var(--c-surface-warm);padding:.5rem .85rem;border-radius:var(--r-full);font-size:.78rem">
+            <i class="fa-solid fa-medal"></i> Qualidade comprovada
+          </div>
+        </div>
+
+        <!-- Related products -->
+        <div class="related-section">
+          <h2 class="section-title" style="margin-bottom:.5rem">Produtos relacionados</h2>
+          <p style="font-size:.85rem;color:var(--c-text-muted);margin-bottom:1.5rem">Veja outros produtos desta categoria</p>
+          <div class="products-grid" id="related-grid"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:.75rem">
+            <div class="nav-logo-icon"><i class="fa-solid fa-couch"></i></div>
+            <div class="nav-logo-text">
+              <strong>Bello Móveis</strong>
+              <span>Algodões</span>
+            </div>
+          </a>
+          <p>Qualidade e conforto para o seu lar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Início</a></li>
+            <li><a href="catalogo.html"><i class="fa-solid fa-chevron-right"></i> Catálogo</a></li>
+            <li><a href="sobre.html"><i class="fa-solid fa-chevron-right"></i> Sobre</a></li>
+            <li><a href="contato.html"><i class="fa-solid fa-chevron-right"></i> Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Categorias</h4>
+          <ul id="footer-cats"><!-- JS renderiza --></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span id="footer-phone"></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span id="footer-hours"></span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> Bello Móveis Algodões. Todos os direitos reservados.</p>
+        <div class="footer-socials">
+          <a href="#" id="footer-ig" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" id="footer-fb" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" id="footer-wa2" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+      <div style="text-align:center;padding:.6rem 0 0;border-top:1px solid rgba(255,255,255,.07);margin-top:.75rem">
+        <a href="admin/index.html"
+           style="font-size:.7rem;color:rgba(255,255,255,.2);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:color .25s"
+           onmouseover="this.style.color='rgba(255,255,255,.55)'"
+           onmouseout="this.style.color='rgba(255,255,255,.2)'">
+          <i class="fa-solid fa-lock" style="font-size:.6rem"></i> Área Administrativa
+        </a>
+      </div>
+  </footer>
+
+  <div class="wa-float">
+    <span class="wa-float-tooltip">Falar no WhatsApp</span>
+    <a href="#" class="wa-float-btn" id="wa-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/products.js"></script>
+  <script src="js/sb-client.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const waLink = getWhatsAppLink();
+      ['nav-wa-btn','drawer-wa-btn','wa-float'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.href = waLink;
+      });
+      const pbadge = document.getElementById('product-badge');
+      if (pbadge) pbadge.style.display = pbadge.textContent.trim() ? 'inline-flex' : 'none';
+      document.getElementById('footer-phone').textContent = STORE.phone;
+      document.getElementById('footer-hours').textContent = STORE.hours;
+      document.getElementById('footer-year').textContent  = new Date().getFullYear();
+      const _fig = document.getElementById('footer-ig'); if (_fig) { if (STORE.instagram) _fig.href = STORE.instagram; else _fig.style.display='none'; }
+      const _ffb = document.getElementById('footer-fb'); if (_ffb) { if (STORE.facebook)  _ffb.href = STORE.facebook;  else _ffb.style.display='none'; }
+      document.getElementById('footer-wa2').href = waLink;
+    });
+  </script>
+</body>
+</html>
